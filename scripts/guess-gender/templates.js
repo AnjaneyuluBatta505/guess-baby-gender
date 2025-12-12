@@ -6,7 +6,7 @@ return `
   <div>Discover what centuries-old midwife observations, traditional pregnancy folklore, and classic symptom-based
     patterns might suggest about your baby’s gender.</div>
   <h4>Just for fun — these methods are not medically or scientifically proven.</h4>
-  <button class="guess-btn">Start Gender Guess →
+  <button class="guess-btn">Guess Gender →</button>
 </div>
 </div>`;
 }
