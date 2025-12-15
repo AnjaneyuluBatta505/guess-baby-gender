@@ -1,56 +1,92 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Blog — Guess Baby Gender</title><meta name="description" content="Fun baby gender prediction using traditional midwives tales."><!-- Canonical (English only) --><link rel="canonical" href="https://guessbabygender.in/blog/"><!-- Open Graph --><meta property="og:title" content="Blog — Guess Baby Gender"><meta property="og:description" content="Fun baby gender prediction using traditional midwives tales."><meta property="og:image" content="/images/baby-icon.png"><meta property="og:type" content="website"><!-- Favicon --><link rel="icon" type="image/png" href="/images/baby-icon.png"><link rel="stylesheet" href="/_astro/about-us.BE73HWkD.css">
-<style>.blog-header{text-align:center;padding:3rem 1rem 2rem}.blog-header h1{font-size:2.4rem;font-weight:700;color:var(--pink-dark)}.blog-header p{color:#555;font-size:1.1rem;max-width:650px;margin:0 auto}.blog-articles{align-items:center;display:flex;flex-direction:column}.blog-articles .blog-item{display:flex;align-items:center;padding:var(--general-space-half)}.blog-article{padding-bottom:150px}
-</style></head> <body> <header> <div class="max-w-6xl mx-auto flex items-center justify-between h-16 p-4"> <div class="logo flex items-center gap-2"> <img src="/images/baby-icon.png" alt="Baby Icon"> <span class="font-bold text-lg">Guess Baby Gender</span> </div> <nav class="desktop hidden md:flex gap-6"> <a href="/">Home</a> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy & Baby Items</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">☰</button> </div> </header> <nav id="mobile-menu" class="md:hidden flex-col"> <a href="/">Home</a> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy & Baby Items</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <div id="lang-modal"> <div class="lang-box"> <h3>Select Your Language</h3> <p>Choose a language to translate this page:</p> <button data-lang="en">English</button> <button data-lang="hi">हिंदी</button> <button data-lang="te">తెలుగు</button> <button data-lang="ta">தமிழ்</button> <button data-lang="kn">ಕನ್ನಡ</button> <small>You can change the language later from the header</small> </div> </div> <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Blog — Guess Baby Gender</title><meta name="description" content="Fun baby gender prediction using traditional midwives tales."><!-- Canonical (English only) --><link rel="canonical" href="https://guessbabygender.in/blog/"><!-- Open Graph --><meta property="og:title" content="Blog — Guess Baby Gender"><meta property="og:description" content="Fun baby gender prediction using traditional midwives tales."><meta property="og:image" content="/images/baby-icon.png"><meta property="og:type" content="website"><!-- Favicon --><link rel="icon" type="image/png" href="/images/baby-icon.png"><style>:root{--pink-main: #ff6fae;--pink-light: #ff80b5;--pink-dark: #ff4f95;--pink-bg: #fff7fc;--white: #ffffff;--gray-text: #444;--gray-dark: #333;--shadow-light: rgba(0, 0, 0, .05);--footer-bg: #ffe9f5;--general-space: 16px;--general-space-half: 8px}body{top:0!important;margin:0;font-family:Poppins,sans-serif;background:var(--pink-bg);color:var(--gray-dark)}h1,h2,h3{color:var(--pink-dark);font-size:2rem;font-weight:700}h3{font-size:1rem}header{display:flex;justify-content:space-between;align-items:center;background:var(--white);box-shadow:0 3px 10px var(--shadow-light);position:sticky;top:0;padding:15px}header .logo{font-size:26px;font-weight:600;color:var(--pink-main);display:flex;align-items:center}nav a{margin-left:25px;font-size:16px;color:var(--gray-text);transition:.3s}header nav a:hover{color:var(--pink-main)}button{background:var(--pink-light);color:var(--white);border:none;padding:.9rem 1.5rem;border-radius:8px;cursor:pointer;font-size:1rem;transition:.25s}button:hover{background:var(--pink-dark);transform:translateY(-3px)}button a{color:var(--white);text-decoration:none}.container{width:80%;margin:auto}footer{width:100%;display:block;align-items:center;justify-content:center;padding:30px 0;position:relative;text-align:center;background:var(--footer-bg);color:var(--gray-text);overflow:hidden;flex-direction:column;gap:var(--general-space);bottom:-10px}img.baby-icon{width:50px;height:50px}.bottom-break{margin-bottom:80px}.goog-logo-link,.goog-te-gadget span{display:none!important}.goog-te-gadget{font-size:11px;color:var(--pink-dark)!important;position:absolute;white-space:nowrap;display:flex;align-items:center;right:-57px}select.goog-te-combo{height:30px;color:var(--white);border:none;background:var(--pink-dark);border-radius:5px;cursor:pointer;margin-right:var(--general-space)!important}.goog-tooltip,.goog-tooltip:hover,.goog-text-highlight{display:none!important}.goog-text-highlight{background:none!important;box-shadow:none!important}body>.skiptranslate{display:none!important}header{display:flex;justify-content:space-between;align-items:center;background:var(--white);box-shadow:0 3px 10px var(--shadow-light);position:sticky;top:0;z-index:50}header .wrapper{display:flex;align-items:center}header .logo{display:flex;align-items:center;gap:.5rem;font-weight:700}header .logo img{width:40px;height:40px}nav.desktop a{text-decoration:none;color:#333;transition:color .2s}nav.desktop a:hover{color:#f472b6}#mobile-menu{display:none;flex-direction:column;background-color:#fff;box-shadow:0 2px 6px #00000026;position:absolute;top:64px;left:0;width:100%;z-index:40}#mobile-menu a{display:block;padding:.75rem 1rem;border-bottom:1px solid #eee}#mobile-menu.show{display:flex!important}#menu-toggle{font-size:24px;background:none;border:none;cursor:pointer;color:var(--pink-dark)}.goog-te-banner-frame.skiptranslate{display:none!important}body{top:0!important;margin-top:0!important;position:static!important}.goog-logo-link,.goog-te-gadget span,.goog-tooltip,.goog-tooltip:hover,.goog-text-highlight{display:none!important}#lang-modal{position:fixed;inset:0;display:none;justify-content:center;align-items:center;background:#0009;z-index:9999}#lang-modal.show{display:flex}#lang-modal .lang-box{background:#fff;padding:20px;border-radius:12px;text-align:center;max-width:320px;width:90%}#lang-modal .lang-box button{display:block;width:100%;margin:8px 0;padding:10px;border:none;border-radius:6px;cursor:pointer;background:#f472b6;color:#fff;font-size:15px}#lang-modal .lang-box button:hover{background:#ec4899}@media screen and (min-width:768px)and (max-width:1023px){nav.desktop{display:flex;gap:1rem}#menu-toggle{display:none}#mobile-menu{display:none!important}}@media screen and (min-width:1024px){nav.desktop{display:flex;gap:1.5rem}#menu-toggle{display:none}#mobile-menu{display:none!important}}@media screen and (max-width:767px){nav.desktop{display:none}header{padding:10px}#menu-toggle{display:block;position:absolute;right:0}}
+.blog-header{text-align:center;padding:3rem 1rem 2rem}.blog-header h1{font-size:2.4rem;font-weight:700;color:var(--pink-dark)}.blog-header p{color:#555;font-size:1.1rem;max-width:650px;margin:0 auto}.blog-articles{align-items:center;display:flex;flex-direction:column}.blog-articles .blog-item{display:flex;align-items:center;padding:var(--general-space-half)}.blog-article{padding-bottom:150px}
+</style></head> <body> <header> <div class="wrapper"> <div class="logo flex items-center gap-2"> <img src="/images/baby-icon.png" alt="Baby Icon"> <span class="font-bold text-lg">Guess Baby Gender</span> </div> <nav class="desktop hidden md:flex gap-6"> <a href="/">Home</a> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy & Baby Items</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">☰</button> </div> </header> <nav id="mobile-menu" class="md:hidden flex-col"> <a href="/">Home</a> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy & Baby Items</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <div id="lang-modal"> <div class="lang-box"> <h3>Select Your Language</h3> <p>Choose a language to translate this page:</p> <button data-lang="en">English</button> <button data-lang="hi">हिंदी</button> <button data-lang="te">తెలుగు</button> <button data-lang="ta">தமிழ்</button> <button data-lang="kn">ಕನ್ನಡ</button> <small>You can change the language later from the header</small> </div> </div> <script>
+  (function () {
+    /* ------------------------------
+       SAFE DOM READY
+    ------------------------------ */
+    document.addEventListener("DOMContentLoaded", () => {
+      /* ------------------------------
+         MOBILE MENU (SAFE)
+      ------------------------------ */
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('show');
-  });
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("show");
+        });
 
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.classList.remove('show'));
-  });
-
-  // Language modal
-  const langModal = document.getElementById('lang-modal');
-  const savedLang = localStorage.getItem('preferredLang');
-  const langCookie = document.cookie.includes('googtrans');
-
-  if (!savedLang) {
-    langModal.classList.add('show');
-  } else if (savedLang !== 'en' && !langCookie) {
-    document.cookie = `googtrans=/en/${savedLang};path=/`;
-    // reload once
-    window.location.replace(window.location.href);
-  }
-
-  langModal.querySelectorAll('button').forEach(btn => {
-    btn.addEventListener('click', e => {
-      const lang = e.target.dataset.lang;
-      localStorage.setItem('preferredLang', lang);
-
-      if (lang !== 'en') {
-        if (!document.cookie.includes('googtrans')) {
-          document.cookie = `googtrans=/en/${lang};path=/`;
-          window.location.replace(window.location.href);
-        }
-      } else {
-        langModal.classList.remove('show');
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("show");
+          });
+        });
       }
-    });
-  });
-});
 
-// Google Translate loader
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    { pageLanguage: 'en', includedLanguages: 'en,hi,te,ta,kn', autoDisplay: false },
-    'google_translate_element'
-  );
-}
+      /* ------------------------------
+         LANGUAGE MODAL LOGIC
+      ------------------------------ */
+      const langModal = document.getElementById("lang-modal");
+      if (!langModal) return;
+
+      const savedLang = localStorage.getItem("preferredLang");
+      const hasGoogTrans = document.cookie.includes("googtrans=");
+
+      // Show modal only first time
+      if (!savedLang) {
+        langModal.classList.add("show");
+        return;
+      }
+
+      // Apply saved language ONCE
+      if (savedLang !== "en" && !hasGoogTrans) {
+        document.cookie = `googtrans=/en/${savedLang};path=/`;
+        sessionStorage.setItem("gtReloaded", "1");
+        location.reload();
+        return;
+      }
+
+      // Button click handling
+      langModal.querySelectorAll("button[data-lang]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const lang = btn.dataset.lang;
+          localStorage.setItem("preferredLang", lang);
+
+          if (lang === "en") {
+            document.cookie = "googtrans=;path=/;max-age=0";
+            langModal.classList.remove("show");
+            return;
+          }
+
+          document.cookie = `googtrans=/en/${lang};path=/`;
+          sessionStorage.setItem("gtReloaded", "1");
+          location.reload();
+        });
+      });
+    });
+
+    /* ------------------------------
+       GOOGLE TRANSLATE INIT (SINGLETON)
+    ------------------------------ */
+    window.__gtInitialized = window.__gtInitialized || false;
+
+    window.googleTranslateElementInit = function () {
+      if (window.__gtInitialized) return;
+      window.__gtInitialized = true;
+
+      if (!document.getElementById("google_translate_element")) return;
+
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,hi,te,ta,kn",
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+    };
+  })();
 </script> <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Language Switcher (you can move this into Header later) --> <div id="google_translate_element" style="text-align:right; padding:8px;"></div> <main>  <section class="blog-header"> <h1>Baby & Pregnancy Blog</h1> <p>Helpful tips, fun facts, and insights for new parents and families.</p> </section> <div class="container blog-articles"> <div class="blog-item"> <span><img class="baby-icon" src="/images/baby-icon.png"></span> <a href="/blog/10-early-signs-having-baby-girl/"> 10 Early Signs You&#39;re Having a Baby Girl</a> </div><div class="blog-item"> <span><img class="baby-icon" src="/images/baby-icon.png"></span> <a href="/blog/baby-boy-symptoms-according-to-old-tales/"> Baby Boy Symptoms According to Old Tales</a> </div><div class="blog-item"> <span><img class="baby-icon" src="/images/baby-icon.png"></span> <a href="/blog/top-essentials-for-expecting-moms/"> Top Essentials for Expecting Moms</a> </div> </div>  </main> <footer> <div class="footer-nav"> <nav> <a href="/privacy-policy/">Privacy Policy</a> <a href="/terms-conditions/">Terms & Conditions</a> <a href="/faq/">FAQ</a> </nav> </div> <div>© 2025 guessbabygender.in — Made with 💗 for new parents.</div> </footer> <!-- ===================== --> <!-- Google Translate --> <!-- ===================== --> <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
