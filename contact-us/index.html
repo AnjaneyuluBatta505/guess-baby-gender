@@ -1,8 +1,7 @@
 <!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact Us — Guess Baby Gender</title><meta name="description" content="Fun baby gender prediction using traditional midwives tales."><!-- Canonical (English only) --><link rel="canonical" href="https://guessbabygender.in/contact-us/"><!-- Open Graph --><meta property="og:title" content="Contact Us — Guess Baby Gender"><meta property="og:description" content="Fun baby gender prediction using traditional midwives tales."><meta property="og:image" content="/images/baby-icon.png"><meta property="og:type" content="website"><!-- Favicon --><link rel="icon" type="image/png" href="/images/baby-icon.png"><style>.contact-us{width:80%;height:61vh;margin:auto;padding-bottom:120px}
 </style>
-<link rel="stylesheet" href="/_astro/about-us.CKj8eNJH.css"></head> <body> <header> <div class="max-w-6xl mx-auto flex items-center justify-between"> <!-- Logo --> <div class="logo flex items-center gap-2"> <img src="/images/baby-icon.png" alt="Baby Icon"> <span class="font-bold text-lg">Guess Baby Gender</span> </div> <!-- Desktop Nav --> <nav class="desktop hidden md:flex gap-6"> <a href="/">Home</a> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy & Baby Items</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <!-- Hamburger Toggle --> <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
-☰
-</button> </div> </header> <!-- Mobile menu outside header --> <nav id="mobile-menu" class="md:hidden flex-col"> <a href="/">Home</a> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy & Baby Items</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <!-- Language Modal --> <div id="lang-modal"> <div class="lang-box"> <h3>Select Your Language</h3> <p>Choose a language to translate this page:</p> <button data-lang="en">English</button> <button data-lang="hi">हिंदी</button> <button data-lang="te">తెలుగు</button> <button data-lang="ta">தமிழ்</button> <button data-lang="kn">ಕನ್ನಡ</button> <small>You can change the language later from the header</small> </div> </div> <!-- Scripts --> <script>
+<link rel="stylesheet" href="/_astro/about-us.Cb4ohn8v.css"></head> <body> <header> <div class="max-w-6xl mx-auto flex items-center justify-between h-16 p-4"> <div class="logo flex items-center gap-2"> <img src="/images/baby-icon.png" alt="Baby Icon"> <span class="font-bold text-lg">Guess Baby Gender</span> </div> <nav class="desktop hidden md:flex gap-6"> <a href="/">Home</a> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy & Baby Items</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">☰</button> </div> </header> <nav id="mobile-menu" class="md:hidden flex-col"> <a href="/">Home</a> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy & Baby Items</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <div id="lang-modal"> <div class="lang-box"> <h3>Select Your Language</h3> <p>Choose a language to translate this page:</p> <button data-lang="en">English</button> <button data-lang="hi">हिंदी</button> <button data-lang="te">తెలుగు</button> <button data-lang="ta">தமிழ்</button> <button data-lang="kn">ಕನ್ನಡ</button> <small>You can change the language later from the header</small> </div> </div> <script>
+document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -15,36 +14,43 @@
     link.addEventListener('click', () => mobileMenu.classList.remove('show'));
   });
 
-  // Language modal logic
+  // Language modal
   const langModal = document.getElementById('lang-modal');
   const savedLang = localStorage.getItem('preferredLang');
+  const langCookie = document.cookie.includes('googtrans');
 
   if (!savedLang) {
     langModal.classList.add('show');
-  } else if (savedLang !== 'en') {
+  } else if (savedLang !== 'en' && !langCookie) {
     document.cookie = `googtrans=/en/${savedLang};path=/`;
+    // reload once
+    window.location.replace(window.location.href);
   }
 
   langModal.querySelectorAll('button').forEach(btn => {
     btn.addEventListener('click', e => {
       const lang = e.target.dataset.lang;
       localStorage.setItem('preferredLang', lang);
-      if (lang === 'en') {
+
+      if (lang !== 'en') {
+        if (!document.cookie.includes('googtrans')) {
+          document.cookie = `googtrans=/en/${lang};path=/`;
+          window.location.replace(window.location.href);
+        }
+      } else {
         langModal.classList.remove('show');
-        return;
       }
-      document.cookie = `googtrans=/en/${lang};path=/`;
-      location.reload();
     });
   });
+});
 
-  // Google Translate loader
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: 'en', includedLanguages: 'en,hi,te,ta', autoDisplay: false },
-      'google_translate_element'
-    );
-  }
+// Google Translate loader
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    { pageLanguage: 'en', includedLanguages: 'en,hi,te,ta,kn', autoDisplay: false },
+    'google_translate_element'
+  );
+}
 </script> <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- Language Switcher (you can move this into Header later) --> <div id="google_translate_element" style="text-align:right; padding:8px;"></div> <main>  <main class="contact-us"> <h1>Contact Us</h1> <p>
 If you have any questions, suggestions, or feedback, feel free to reach
       out to us directly via email:
