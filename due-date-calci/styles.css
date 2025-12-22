@@ -1,0 +1,93 @@
+.pc-app {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  background: #fff7fb;
+  padding: 0.75rem;
+  color: #333;
+  max-width: 980px;
+  margin: auto;
+}
+
+/* Card */
+.pc-card {
+  background: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(255, 92, 168, 0.15);
+}
+
+/* Header */
+.pc-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+  align-items: end;
+}
+
+.pc-header label {
+  font-size: 0.75rem;
+}
+
+.pc-header input {
+  padding: 0.45rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Journey */
+.pc-journey {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.pc-journey-svg {
+  width: 100%;
+  height: 220px;
+}
+
+/* Paths */
+.pc-base-path {
+  stroke: #cce4ff;
+  stroke-width: 8;
+  fill: none;
+  stroke-dasharray: 10 8;
+}
+
+.pc-progress-path {
+  stroke: rgb(255 209 174);
+  stroke-width: 50;
+  fill: none;
+  stroke-linecap: round;
+}
+
+
+/* Week dots */
+.pc-week-marker {
+  fill: #ff5ca8;
+  r: 5;
+}
+
+/* Current marker */
+.pc-marker-pin {
+  fill: #ff5ca8;
+  transform: scale(1.15);
+}
+
+.pc-marker-label {
+  font-size: 12px;
+  fill: #3645d9;
+  font-weight: 700;
+}
+
+table.pc-summary-table {
+  color: #ff4f95;
+  border: 1px solid #cce3ff;
+  font-size: 12px;
+  margin-top: 1rem;
+  position: absolute;
+  width: 300px;
+  text-align: center;
+}
+table.pc-summary-table td {
+  color: rgba(54, 69, 217, 1);
+  font-weight: bolder;
+}
