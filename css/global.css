@@ -12,11 +12,17 @@
   --general-space-half: 8px;
 }
 body {
+  display: flex;
+  flex-direction: column;
   top: 0 !important;
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: var(--pink-bg);
   color: var(--gray-dark);
+}
+main {
+  flex: 1;
+  overflow: auto;
 }
 h1, h2, h3 {
   color: var(--pink-dark);
@@ -36,6 +42,7 @@ header {
   position: sticky;
   top: 0;
   padding: 15px;
+  height: 40px;
 }
 header .logo {
   font-size: 26px;
@@ -87,6 +94,7 @@ button a {
 }
 /* Footer */
 footer {
+  height: 60px;
   width: 100%;
   display: block;
   align-items: center;
