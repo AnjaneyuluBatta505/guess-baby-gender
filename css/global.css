@@ -24,7 +24,9 @@ main {
   flex: 1;
   overflow: auto;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--pink-dark);
   font-size: 2rem;
   font-weight: 700;
@@ -161,4 +163,21 @@ select.goog-te-combo {
 /* Hide Google Translate top bar */
 body > .skiptranslate {
   display: none !important;
+}
+#google_translate_element {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  z-index: 1;
+  width: 200px;
+  height: 100px;
+}
+.disclosure {
+  margin-top: 20px;
+  background: #fff7d6;
+  padding: 12px;
+  border-left: 4px solid #ffb100;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 12px;
 }
