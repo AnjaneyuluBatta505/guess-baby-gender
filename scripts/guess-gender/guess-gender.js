@@ -1,6 +1,6 @@
 import {questions} from "./questions_en.js"
 import {
-  getGenderInfoTemplate,
+  // getGenderInfoTemplate,
   getQuizQuestionTemplate,
   getQuizContainerTemplate,
   getQuizResultTemplate,
@@ -92,7 +92,7 @@ export class GuessBabyGender {
   }
 
   init() {
-    this.target.innerHTML = getGenderInfoTemplate();
+    // this.target.innerHTML = getGenderInfoTemplate();
     this.bindGenderGuessBtnClick();
   }
 
