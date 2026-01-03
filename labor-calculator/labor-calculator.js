@@ -1,1 +1,46 @@
-function getBaseTemplate(){return'\n      <div class="gbg-card">\n        <h2>Am I in Labor?</h2>\n        <p class="gbg-subtitle">Check common labor signs and contractions</p>\n\n        <div class="gbg-field">\n          <label>Contraction Frequency (minutes apart)</label>\n          <input type="number" id="frequency" placeholder="e.g. 5" min="1">\n        </div>\n\n        <div class="gbg-field">\n          <label>Contraction Duration (seconds)</label>\n          <input type="number" id="duration" placeholder="e.g. 60" min="10">\n        </div>\n\n        <div class="gbg-field">\n          <label>Contraction Intensity</label>\n          <select id="intensity">\n            <option value="">Select intensity</option>\n            <option value="mild">Mild</option>\n            <option value="moderate">Moderate</option>\n            <option value="strong">Strong</option>\n          </select>\n        </div>\n\n        <div class="gbg-symptoms">\n          <label><input type="checkbox" id="backPain"> Lower back pain</label>\n          <label><input type="checkbox" id="pelvicPressure"> Pelvic pressure</label>\n          <label><input type="checkbox" id="bloodyShow"> Bloody show</label>\n          <label><input type="checkbox" id="waterBreak"> Water has broken</label>\n          <label><input type="checkbox" id="highBP"> High blood pressure (BP)</label>\n        </div>\n\n        <button id="checkLabor" class="gbg-btn">\n          Check Labor Status\n        </button>\n\n        <div id="result" class="gbg-result"></div>\n\n        <div class="disclosure">\n          <strong>Medical Disclaimer</strong>\n          <p>\n            This calculator is for informational purposes only and does not\n            provide medical advice, diagnosis, or treatment.\n          </p>\n          <p>\n            Labor symptoms vary between individuals. If you believe you may be\n            in labor or experience strong pain, bleeding, fluid leakage, or\n            high blood pressure, contact your doctor or emergency services\n            immediately.\n          </p>\n        </div>\n      </div>'}class LaborCalculator{constructor(e){this.container=document.querySelector(e),this.render(),this.bindEvents()}render(){this.container.innerHTML=getBaseTemplate()}bindEvents(){this.container.querySelector("#checkLabor").addEventListener("click",(()=>this.calculate()))}calculate(){const e=Number(this.container.querySelector("#frequency").value),n=Number(this.container.querySelector("#duration").value),t=this.container.querySelector("#intensity").value,o=this.container.querySelector("#backPain").checked,r=this.container.querySelector("#pelvicPressure").checked,a=this.container.querySelector("#bloodyShow").checked,i=this.container.querySelector("#waterBreak").checked,l=this.container.querySelector("#highBP").checked;let c=0;e>0&&e<=5?c+=3:e<=10&&(c+=1),n>=60&&(c+=2),"moderate"===t&&(c+=1),"strong"===t&&(c+=3),o&&(c+=1),r&&(c+=2),a&&(c+=2),i&&(c+=4),l&&(c+=5);let s="";s=l?'\n      <div class="gbg-alert active">\n        <strong>High blood pressure detected.</strong>\n        <p>High BP during pregnancy can be serious.</p>\n        <p>Contact your doctor or go to the hospital immediately.</p>\n      </div>\n    ':c>=8?'\n      <div class="gbg-alert active">\n        <strong>You may be in active labor.</strong>\n        <p>Contractions and symptoms strongly suggest labor.</p>\n        <p>Contact your healthcare provider or go to the hospital.</p>\n      </div>\n    ':c>=4?'\n      <div class="gbg-alert early">\n        <strong>Early labor or labor starting.</strong>\n        <p>Several labor signs are present.</p>\n        <p>Monitor contractions and check again soon.</p>\n      </div>\n    ':'\n      <div class="gbg-alert notyet">\n        <strong>You are likely not in labor yet.</strong>\n        <p>Symptoms may be early or false labor.</p>\n        <p>Recheck if contractions become regular or stronger.</p>\n      </div>\n    ',this.container.querySelector("#result").innerHTML=s}}document.addEventListener("DOMContentLoaded",(()=>{new LaborCalculator("#labor-calculator")}));
+function getBaseTemplate() {
+  return '\n      <div class="gbg-card">\n        <h2>Am I in Labor?</h2>\n        <p class="gbg-subtitle">Check common labor signs and contractions</p>\n\n        <div class="gbg-field">\n          <label>Contraction Frequency (minutes apart)</label>\n          <input type="number" id="frequency" placeholder="e.g. 5" min="1">\n        </div>\n\n        <div class="gbg-field">\n          <label>Contraction Duration (seconds)</label>\n          <input type="number" id="duration" placeholder="e.g. 60" min="10">\n        </div>\n\n        <div class="gbg-field">\n          <label>Contraction Intensity</label>\n          <select id="intensity">\n            <option value="">Select intensity</option>\n            <option value="mild">Mild</option>\n            <option value="moderate">Moderate</option>\n            <option value="strong">Strong</option>\n          </select>\n        </div>\n\n        <div class="gbg-symptoms">\n          <label><input type="checkbox" id="backPain"> Lower back pain</label>\n          <label><input type="checkbox" id="pelvicPressure"> Pelvic pressure</label>\n          <label><input type="checkbox" id="bloodyShow"> Bloody show</label>\n          <label><input type="checkbox" id="waterBreak"> Water has broken</label>\n          <label><input type="checkbox" id="highBP"> High blood pressure (BP)</label>\n        </div>\n\n        <button id="checkLabor" class="gbg-btn">\n          Check Labor Status\n        </button>\n\n        <div id="result" class="gbg-result"></div>\n\n        <div class="disclosure">\n          <strong>Medical Disclaimer</strong>\n          <p>\n            This calculator is for informational purposes only and does not\n            provide medical advice, diagnosis, or treatment.\n          </p>\n          <p>\n            Labor symptoms vary between individuals. If you believe you may be\n            in labor or experience strong pain, bleeding, fluid leakage, or\n            high blood pressure, contact your doctor or emergency services\n            immediately.\n          </p>\n        </div>\n      </div>';
+}
+class LaborCalculator {
+  constructor(e) {
+    (this.container = document.querySelector(e)),
+      this.bindEvents();
+  }
+  bindEvents() {
+    this.container
+      .querySelector("#checkLabor")
+      .addEventListener("click", () => this.calculate());
+  }
+  calculate() {
+    const e = Number(this.container.querySelector("#frequency").value),
+      n = Number(this.container.querySelector("#duration").value),
+      t = this.container.querySelector("#intensity").value,
+      o = this.container.querySelector("#backPain").checked,
+      r = this.container.querySelector("#pelvicPressure").checked,
+      a = this.container.querySelector("#bloodyShow").checked,
+      i = this.container.querySelector("#waterBreak").checked,
+      l = this.container.querySelector("#highBP").checked;
+    let c = 0;
+    e > 0 && e <= 5 ? (c += 3) : e <= 10 && (c += 1),
+      n >= 60 && (c += 2),
+      "moderate" === t && (c += 1),
+      "strong" === t && (c += 3),
+      o && (c += 1),
+      r && (c += 2),
+      a && (c += 2),
+      i && (c += 4),
+      l && (c += 5);
+    let s = "";
+    (s = l
+      ? '\n      <div class="gbg-alert active">\n        <strong>High blood pressure detected.</strong>\n        <p>High BP during pregnancy can be serious.</p>\n        <p>Contact your doctor or go to the hospital immediately.</p>\n      </div>\n    '
+      : c >= 8
+      ? '\n      <div class="gbg-alert active">\n        <strong>You may be in active labor.</strong>\n        <p>Contractions and symptoms strongly suggest labor.</p>\n        <p>Contact your healthcare provider or go to the hospital.</p>\n      </div>\n    '
+      : c >= 4
+      ? '\n      <div class="gbg-alert early">\n        <strong>Early labor or labor starting.</strong>\n        <p>Several labor signs are present.</p>\n        <p>Monitor contractions and check again soon.</p>\n      </div>\n    '
+      : '\n      <div class="gbg-alert notyet">\n        <strong>You are likely not in labor yet.</strong>\n        <p>Symptoms may be early or false labor.</p>\n        <p>Recheck if contractions become regular or stronger.</p>\n      </div>\n    '),
+      (this.container.querySelector("#result").innerHTML = s);
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  new LaborCalculator("#labor-calculator");
+});
