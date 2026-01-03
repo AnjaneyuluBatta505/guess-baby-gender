@@ -155,8 +155,9 @@ Every pregnancy is unique, but these essentials help you stay comfortable, prepa
         and confident throughout the journey. Prioritize self-care, and remember that
         taking care of yourself is just as important as preparing for your little one.
 </p> </article> </div>  </main> <footer> <div class="footer-nav"> <nav> <a href="/privacy-policy/">Privacy Policy</a> <a href="/terms-conditions/">Terms & Conditions</a> <a href="/faq/">FAQ</a> </nav> </div> <div>© 2026 guessbabygender.in — Made with 💗 for new parents.</div> </footer> <!-- ===================== --> <!-- SEO SAFETY: noindex translated pages --> <!-- ===================== --> <script>
+      const hasGoogleTrans = document.cookie.includes("googtrans");
       const isEnglish = document.cookie.includes("googtrans=/en/en");
-      if (!isEnglish) {
+      if (hasGoogleTrans && !isEnglish) {
         const metaRobots = document.createElement("meta");
         metaRobots.name = "robots";
         metaRobots.content = "noindex, nofollow";

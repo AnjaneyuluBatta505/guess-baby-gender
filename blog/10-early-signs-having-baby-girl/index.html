@@ -160,8 +160,9 @@ These signs are fun and part of the excitement of pregnancy, but they
         a girl or a boy, the most important thing is a healthy, happy baby — and
         a happy mom.
 </p> </article> </div>  </main> <footer> <div class="footer-nav"> <nav> <a href="/privacy-policy/">Privacy Policy</a> <a href="/terms-conditions/">Terms & Conditions</a> <a href="/faq/">FAQ</a> </nav> </div> <div>© 2026 guessbabygender.in — Made with 💗 for new parents.</div> </footer> <!-- ===================== --> <!-- SEO SAFETY: noindex translated pages --> <!-- ===================== --> <script>
+      const hasGoogleTrans = document.cookie.includes("googtrans");
       const isEnglish = document.cookie.includes("googtrans=/en/en");
-      if (!isEnglish) {
+      if (hasGoogleTrans && !isEnglish) {
         const metaRobots = document.createElement("meta");
         metaRobots.name = "robots";
         metaRobots.content = "noindex, nofollow";

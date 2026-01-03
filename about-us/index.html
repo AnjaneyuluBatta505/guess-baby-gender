@@ -144,8 +144,9 @@ We wanted to create a cute, engaging, and family-friendly space where
 Thank you for using <strong>Guess Baby Gender</strong>.  
       We hope our app adds a sprinkle of joy and excitement to your pregnancy journey! 💕
 </p> </section>  </main> <footer> <div class="footer-nav"> <nav> <a href="/privacy-policy/">Privacy Policy</a> <a href="/terms-conditions/">Terms & Conditions</a> <a href="/faq/">FAQ</a> </nav> </div> <div>© 2026 guessbabygender.in — Made with 💗 for new parents.</div> </footer> <!-- ===================== --> <!-- SEO SAFETY: noindex translated pages --> <!-- ===================== --> <script>
+      const hasGoogleTrans = document.cookie.includes("googtrans");
       const isEnglish = document.cookie.includes("googtrans=/en/en");
-      if (!isEnglish) {
+      if (hasGoogleTrans && !isEnglish) {
         const metaRobots = document.createElement("meta");
         metaRobots.name = "robots";
         metaRobots.content = "noindex, nofollow";

@@ -125,8 +125,9 @@ Our gender predictor uses midwife tales and probability-based
 Find out if the prediction leans towards a baby boy 💙 or baby girl
             💖.
 </p> </div> </div> </div> </section>  <section class="lba-wrap"> <div class="latest-blog-articles"> <h2>Latest Articles</h2> <div class="blog-grid"> <div class="blog-card"> <h3>10 Early Signs You're Having a Girl</h3> <p>Cute myths that moms swear by — from cravings to glow!</p> <a href="/blog/10-early-signs-having-baby-girl/">Read More →</a> </div> <div class="blog-card"> <h3>Baby Boy Symptoms According to Old Tales</h3> <p>Popular traditional beliefs you'll love exploring.</p> <a href="/blog/baby-boy-symptoms-according-to-old-tales/">Read More →</a> </div> <div class="blog-card"> <h3>Top Essentials for Expecting Moms</h3> <p>Best pregnancy products every mom should have.</p> <a href="/blog/top-essentials-for-expecting-moms/">Read More →</a> </div> </div> </div> </section>  </main> <footer> <div class="footer-nav"> <nav> <a href="/privacy-policy/">Privacy Policy</a> <a href="/terms-conditions/">Terms & Conditions</a> <a href="/faq/">FAQ</a> </nav> </div> <div>© 2026 guessbabygender.in — Made with 💗 for new parents.</div> </footer> <!-- ===================== --> <!-- SEO SAFETY: noindex translated pages --> <!-- ===================== --> <script>
+      const hasGoogleTrans = document.cookie.includes("googtrans");
       const isEnglish = document.cookie.includes("googtrans=/en/en");
-      if (!isEnglish) {
+      if (hasGoogleTrans && !isEnglish) {
         const metaRobots = document.createElement("meta");
         metaRobots.name = "robots";
         metaRobots.content = "noindex, nofollow";
