@@ -1,4 +1,4 @@
-<!DOCTYPE html><link rel="stylesheet" href="/ovulation-calculator/styles.css"><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Free Ovulation Calendar | Calculate Your Fertile Window Instantly</title><meta name="description" content="Quickly find your most fertile days with our easy ovulation calendar. Just enter your last period date to see your cycle map and upcoming ovulation dates. 100% free."><meta name="robots" content="index, follow"><!-- Canonical --><link rel="canonical" href="https://guessbabygender.in/pregnancy-tools/free-ovulation-calculator/"><!-- Open Graph --><meta property="og:title" content="Free Ovulation Calendar | Calculate Your Fertile Window Instantly"><meta property="og:description" content="Quickly find your most fertile days with our easy ovulation calendar. Just enter your last period date to see your cycle map and upcoming ovulation dates. 100% free."><meta property="og:image" content="/images/baby-icon.png"><meta property="og:type" content="website"><!-- twitter --><meta name="twitter:title" content="Free Ovulation Calendar | Calculate Your Fertile Window Instantly"><meta name="twitter:description" content="Quickly find your most fertile days with our easy ovulation calendar. Just enter your last period date to see your cycle map and upcoming ovulation dates. 100% free."><meta name="twitter:image" content="/images/baby-icon.png"><!-- styles --><link rel="stylesheet" type="text/css" href="/css/global.css"><link rel="stylesheet" type="text/css" href="/css/header.css"><!-- Favicon --><link rel="icon" type="image/png" href="/images/baby-icon.png"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8955684300110547" crossorigin="anonymous"></script></head> <body> <header> <div class="wrapper"> <div class="logo flex items-center gap-2"> <a href="/"> <img src="/images/baby-icon.png" alt="Baby Icon"> <span class="font-bold text-lg">Guess Baby Gender</span> </a> </div> <nav class="desktop hidden md:flex gap-6"> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy Items</a> <a href="/pregnancy-tools/">Pregnancy Tools</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">☰</button> </div> </header> <nav id="mobile-menu" class="md:hidden flex-col"> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy Items</a> <a href="/pregnancy-tools/">Pregnancy Tools</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <div id="lang-modal"> <div class="lang-box"> <h3>Select Your Language</h3> <p>Choose a language to translate this page:</p> <button data-lang="en">English</button> <button data-lang="hi">हिंदी</button> <button data-lang="te">తెలుగు</button> <button data-lang="ta">தமிழ்</button> <button data-lang="kn">ಕನ್ನಡ</button> <small>You can change the language later from the header</small> </div> </div> <script>
+<!DOCTYPE html><link rel="stylesheet" href="/ovulation-calculator/styles.css"><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Free Ovulation Calendar | Calculate Your Fertile Window Instantly</title><meta name="description" content="Quickly find your most fertile days with our easy ovulation calendar. Just enter your last period date to see your cycle map and upcoming ovulation dates. 100% free."><meta name="robots" content="index, follow"><meta name="msvalidate.01" content="B5094B4E83B3E1C04656572E7E1732BE"><!-- Canonical --><link rel="canonical" href="https://guessbabygender.in/pregnancy-tools/free-ovulation-calculator/"><!-- Open Graph --><meta property="og:title" content="Free Ovulation Calendar | Calculate Your Fertile Window Instantly"><meta property="og:description" content="Quickly find your most fertile days with our easy ovulation calendar. Just enter your last period date to see your cycle map and upcoming ovulation dates. 100% free."><meta property="og:image" content="/images/baby-icon.png"><meta property="og:type" content="website"><!-- twitter --><meta name="twitter:title" content="Free Ovulation Calendar | Calculate Your Fertile Window Instantly"><meta name="twitter:description" content="Quickly find your most fertile days with our easy ovulation calendar. Just enter your last period date to see your cycle map and upcoming ovulation dates. 100% free."><meta name="twitter:image" content="/images/baby-icon.png"><!-- styles --><link rel="stylesheet" type="text/css" href="/css/global.css"><link rel="stylesheet" type="text/css" href="/css/header.css"><!-- Favicon --><link rel="icon" type="image/png" href="/images/baby-icon.png"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8955684300110547" crossorigin="anonymous"></script></head> <body> <header> <div class="wrapper"> <div class="logo flex items-center gap-2"> <a href="/"> <img src="/images/baby-icon.png" alt="Baby Icon"> <span class="font-bold text-lg">Guess Baby Gender</span> </a> </div> <nav class="desktop hidden md:flex gap-6"> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy Items</a> <a href="/pregnancy-tools/">Pregnancy Tools</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">☰</button> </div> </header> <nav id="mobile-menu" class="md:hidden flex-col"> <a href="/guess-gender/">Guess Gender</a> <a href="/pregnancy-baby-items/">Pregnancy Items</a> <a href="/pregnancy-tools/">Pregnancy Tools</a> <a href="/blog/">Blog</a> <a href="/about-us/">About</a> <a href="/contact-us/">Contact</a> </nav> <script>
 (function () {
   document.addEventListener("DOMContentLoaded", () => {
 
@@ -17,42 +17,6 @@
         });
       });
     }
-
-    /* ---------- Language Modal ---------- */
-    const langModal = document.getElementById("lang-modal");
-    if (!langModal) return;
-
-    const savedLang = localStorage.getItem("preferredLang");
-    const hasGoogTrans = document.cookie.includes("googtrans=");
-
-    // Show modal first visit
-    if (!savedLang) {
-      langModal.classList.add("show");
-    }
-
-    // Apply saved language ONCE
-    if (savedLang && savedLang !== "en" && !hasGoogTrans) {
-      document.cookie = `googtrans=/en/${savedLang};path=/`;
-      location.reload();
-      return;
-    }
-
-    // ✅ ALWAYS bind buttons
-    langModal.querySelectorAll("button[data-lang]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const lang = btn.dataset.lang;
-        localStorage.setItem("preferredLang", lang);
-
-        if (lang === "en") {
-          document.cookie = "googtrans=;path=/;max-age=0";
-          langModal.classList.remove("show");
-          return;
-        }
-
-        document.cookie = `googtrans=/en/${lang};path=/`;
-        location.reload();
-      });
-    });
   });
 
   /* ---------- Google Translate (Singleton) ---------- */
@@ -62,6 +26,8 @@
     if (window.__gtInitialized) return;
     window.__gtInitialized = true;
 
+    // Note: Ensure you have a div with this ID somewhere in your layout/footer
+    // if you still want the Google Translate widget to appear.
     if (!document.getElementById("google_translate_element")) return;
 
     new google.translate.TranslateElement(
@@ -130,6 +96,57 @@ Ovulation timing can vary due to stress, illness, or hormonal changes.
         metaRobots.content = "noindex, nofollow";
         document.head.appendChild(metaRobots);
       }
+    </script> <script>
+      const draggable = document.getElementById("google_translate_element");
+      let isDragging = false;
+      let offsetX, offsetY;
+
+      // Function to handle start of drag
+      const startDrag = (e) => {
+        isDragging = true;
+        const clientX =
+          e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
+        const clientY =
+          e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
+
+        offsetX = clientX - draggable.offsetLeft;
+        offsetY = clientY - draggable.offsetTop;
+        draggable.style.transition = "none";
+      };
+
+      // Function to handle moving
+      const moveDrag = (e) => {
+        if (!isDragging) return;
+        e.preventDefault(); // Prevents scrolling while dragging on mobile
+
+        const clientX =
+          e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
+        const clientY =
+          e.type === "touchmove" ? e.touches[0].clientY : e.clientY;
+
+        let x = clientX - offsetX;
+        let y = clientY - offsetY;
+
+        draggable.style.left = `${x}px`;
+        draggable.style.top = `${y}px`;
+        draggable.style.bottom = "auto";
+        draggable.style.right = "auto";
+      };
+
+      // Function to stop drag
+      const stopDrag = () => {
+        isDragging = false;
+      };
+
+      // Mouse Events
+      draggable.addEventListener("mousedown", startDrag);
+      document.addEventListener("mousemove", moveDrag);
+      document.addEventListener("mouseup", stopDrag);
+
+      // Touch Events (Mobile)
+      draggable.addEventListener("touchstart", startDrag, { passive: false });
+      document.addEventListener("touchmove", moveDrag, { passive: false });
+      document.addEventListener("touchend", stopDrag);
     </script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-071QXFCCWL"></script> <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
